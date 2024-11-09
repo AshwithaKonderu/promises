@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // example 1
+      let myPromise = new Promise((resolve, reject) => {
+        let skills = "JavaScript";
+        let eligibletojob = true;
+        if (skills == "JavaScript" && eligibletojob == false) {
+          resolve("she knows javascript");
+        } else if (skills == "python" && eligibletojob == true) {
+          resolve("she knows Python");
+        } else if (skills == "JavaScript" && eligibletojob == true) {
+          resolve("he knows javascript and eligible for job");
+        } else {
+          reject("he is not eligible for this job");
+        }
+      });
+      myPromise
+        .then((job) => {
+          console.log(job);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // // example two
+
+      let mypromise2 = new Promise((res, rej) => {
+        let success = true;
+        count = 0;
+        setInterval(() => {
+          count++;
+          if (success == "true") {
+            res("im Successed");
+          } else {
+            rej("im failed");
+          }
+          console.log(count);
+        }, 2000);
+      });
+      mypromise2
+        .then((success) => {
+          console.log(success);
+        })
+        .catch((failed) => {
+          console.log(failed);
+        });
+
+      // // example 3
+      let mypromise3 = new Promise((resolve, reject) => {
+        let count = 0;
+        let success = true;
+        setInterval(() => {
+          count++;
+          if (success == true) {
+            resolve("im Successed");
+          } else {
+            reject("im failed");
+          }
+          console.log(count);
+        }, 4000);
+      });
+
+      mypromise3
+        .then((success) => {
+          console.log(success);
+        })
+        .catch((fail) => {
+          console.log(fail);
+        });
+
+      // // example 4
+      let mypromise4 = new Promise((resolve, reject) => {
+        let username = "ashwitha";
+        let password = "Ashwitha@6786";
+        if (username == "ashwitha" && password == "Ashwitha@673565") {
+          resolve("invalid user");
+        } else if (username == "ashhh" && password == "ashwitha2878") {
+          resolve("please check username and pass");
+        } else if (username == "ashuuu" && password == "Ashwitha@6786") {
+          resolve("valid user");
+        } else {
+          reject("the above all are incorrect");
+        }
+      });
+      mypromise4
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((pass) => {
+          console.log(pass);
+        });
+
+
+
+        // using  functions
+      function  remainder(){
+        return new Promise((ashh,ushaa)=>{
+          let hour="drinkwater"
+          setInterval(() => {
+            if(hour=="drinkwaterr"){
+              console.log("its an remainder to drink water")
+            }else{
+              console.log("you are forgeted to drink water try to drink in next hr")
+            }
+            
+          }, 2000);
+        })
+      }
+      remainder().then((water)=>{
+        console.log(water)
+      }).catch((drink)=>{
+        console.log(drink)
+      })
+    </script>
+  </body>
+</html>
